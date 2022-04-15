@@ -11,11 +11,9 @@ const videoSchema = new mongoose.Schema(
       type: String,
       required: "Name of the video is a required attribute",
     },
-    author: String,
-    subscribers: Number,
-    image: String,
+    creator: String,
+    category: String,
     views: Number,
-    date: Date,
     description: {
       type: String,
       minLength: [100, "Description should be atleast of 100 characters"],
