@@ -14,6 +14,7 @@ const videoSchema = new mongoose.Schema(
     creator: String,
     category: String,
     views: Number,
+    date: Date,
     description: {
       type: String,
       minLength: [100, "Description should be atleast of 100 characters"],
