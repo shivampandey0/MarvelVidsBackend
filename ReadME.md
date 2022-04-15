@@ -1,9 +1,9 @@
-[![wakatime](https://wakatime.com/badge/github/supminn/neoG_Backend.svg)](https://wakatime.com/badge/github/supminn/neoG_Backend)
+[![wakatime](https://wakatime.com/badge/user/876cf018-4965-4dd2-ab39-81f6bb972ec5/project/9670b052-fac5-483a-9b77-764603972612.svg)](https://wakatime.com/badge/user/876cf018-4965-4dd2-ab39-81f6bb972ec5/project/9670b052-fac5-483a-9b77-764603972612)
 
 # neoG_backend
 
 Backend using ExpressJS connected to MongoDB through Mongoose. Common user credentails are maintained for all the apps to obtain SSO like feature.
-[API_URL](https://api-supminn.herokuapp.com/)
+[API_URL](https://marvel-vids.herokuapp.com/)
 
 ## Technology Stack
 
@@ -22,35 +22,6 @@ Backend using ExpressJS connected to MongoDB through Mongoose. Common user crede
 - GET /users - Provides individual user's details based on authorization header.
 - POST /users - Updates user details based on authorization header.
 - PUT /users - Updates the following list of the current user and follower list of the viewing user.
-
-## APIs used by SupMart
-
-### Products
-
-- GET /products - List of products available.
-- POST /products - Addition of a new product into inventory.
-- GET /products/product-id - Fetch the details of a single product.
-- POST /products/product-id - Update the details of a single product.
-
-### Products Wishlist
-
-- GET /wishlist - List of all the products present in the user's wishlist.
-- POST /wishlist - Add/remove products to/from wishlist.
-
-### Products Cart
-
-- GET /cart - List of all the products present in the user's cart.
-- POST /cart - Add, move, increment/decrement products to/from cart.
-- PUT /cart - Remove single item from cart (irrespective of their quantity)
-- DELETE /cart - Empty user's cart.
-
-### User Addresses
-
-- GET /address - List of all the user addresses.
-- POST /address - Add new address or update existing address
-- Put /address - Remove an individual address from the given list.
-
-## APIs used by SupVision
 
 ### Videos
 
@@ -87,30 +58,9 @@ Backend using ExpressJS connected to MongoDB through Mongoose. Common user crede
 - POST /note/note-id - Update the details of this note
 - PUT /note/note-id - Delete this note
 
-## APIs used by SupSocial
-
-### Posts for Social Media
-
-- GET /post - List of posts available
-- POST /post - Add a new post
-- PUT /post - Delete post with a specific id
-- GET /post/post-id/like - List of users who have liked the post
-- POST /post/post-id/like - Like or unlike this post
-- GET /post/post-id/comment - List of comments for this post
-- POST /post/post-id/comment - Add a user comment to this post
-- PUT /post/post-id/comment - Delete a comment on this post with a specific id.
-
 ## Features
 
 - MongoDB for database
 - Mongoose to handle validation and communicate to MongoDB
 - ExpressJS to create API routes.
-- Backend created for products, cart, wishlist, address management, user details, videos.
-
-### Enchancements
-
-- Change password for users.
-- Update cart logic using the quantity. (remove a product irrespective of its quantity)
-- Refactor Playlist model & controller logic - populate video data.
-- Create a route using cart ID. In this way, all the products to be checked out can be shared via a link.
-- Paging on posts and comments (order by latest date first)
+- Backend created for user details, videos.
