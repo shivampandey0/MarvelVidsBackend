@@ -30,11 +30,8 @@ const findUser = async (req, res) => {
         expiresIn: '24h',
       });
       res.status(200).json({
-        response: {
-          success: true,
-          firstname: user.firstname,
-          token,
-        },
+        firstname: user.firstname,
+        token,
       });
     } else {
       res.status(403).json({
@@ -71,11 +68,8 @@ const registerUser = async (req, res) => {
       expiresIn: '24h',
     });
     res.status(201).json({
-      response: {
-        success: true,
-        firstname: NewUser.firstname,
-        token,
-      },
+      firstname: NewUser.firstname,
+      token,
     });
   } catch (error) {
     console.error(error);
@@ -91,11 +85,9 @@ const getUserDetailsFromDb = async (req, res) => {
     const { user } = req;
 
     res.status(200).json({
-      response: {
-        email: user.email,
-        firstname: user.firstname,
-        lastname: user.lastname,
-      },
+      email: user.email,
+      firstname: user.firstname,
+      lastname: user.lastname,
     });
   } catch (error) {
     console.error(error);
