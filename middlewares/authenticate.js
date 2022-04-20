@@ -4,13 +4,13 @@ const jwt = require('jsonwebtoken');
 const authenticate = async (req, res, next) => {
   try {
     let token = req.headers.authorization;
+    console.log(token);
     if (!token) {
       return res.status(401).json({
         success: false,
         errorMessage: 'Unauthorized. Token not passed.',
       });
     }
-    token = token.split(' ')[1];
     const decodedValue = jwt.verify(token, process.env.JWT_SECRET);
     const user = await User.findOne({ _id: decodedValue._id });
     if (!user) {
