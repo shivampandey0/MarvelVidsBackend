@@ -10,6 +10,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: 'LastName of the user is required',
     },
+    username: {
+      type: String,
+      required: 'Firstname of the user is required',
+    },
     password: {
       type: String,
       required: 'Password is a required attribute',

@@ -51,7 +51,7 @@ const registerUser = async (req, res) => {
   try {
     const userData = req.body;
     const user = await User.findOne({ email: userData.email });
-
+    console.log(userData)
     if (user) {
       res.status(409).json({
         message: 'Account already exists for this email',
@@ -60,8 +60,10 @@ const registerUser = async (req, res) => {
     }
 
     const NewUser = new User(userData);
+    NewUser.username = NewUser.email.split('@')[0];
     const salt = await bcrypt.genSalt(10);
     NewUser.password = await bcrypt.hash(NewUser.password, salt);
+    console.log(NewUser)
     await NewUser.save();
 
     const token = jwt.sign({ _id: NewUser._id }, process.env.JWT_SECRET, {
